@@ -1,0 +1,10 @@
+  <h1 class="d-flex justify-content-center mb-4">Restaurants</h1>
+  <ul class="text-center list-unstyled">
+    <% @restaurants.each do |restaurant| %>
+      <li><%= restaurant.name %></li>
+      <%= link_to "See datails", restaurant_path(restaurant) %>
+    <% end %>
+  </ul>
+  <div class="text-center mt-4">
+    <%= link_to "Add new restaurant", new_restaurant_path, class: 'btn btn-primary' %>
+  </div>

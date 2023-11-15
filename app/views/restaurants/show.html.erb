@@ -1,0 +1,15 @@
+<h1 class="d-flex justify-content-center mb-4"><%= @restaurant.name %></h1>
+<p class="ms-5">Address: <%= @restaurant.address %></p>
+<p class="ms-5">Category: <%= @restaurant.category %></p>
+<p class="ms-5">Phone number: <%= @restaurant.phone_number %> </p>
+
+<p class="ms-5"><strong>Reviews</strong></p>
+<div class="d-flex inline list-group me-5">
+  <ul>
+    <% @restaurant.reviews.each do |review| %>
+      <li class="list-group-item"><%= review.content %></li>
+    <% end %>
+  </ul>
+</div>
+<%= render 'reviews/form' %>
+<p><%= link_to 'Back', restaurants_path, class: 'btn btn-dark' %></p>
